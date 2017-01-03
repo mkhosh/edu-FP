@@ -1,0 +1,78 @@
+module Week6 where
+
+twice f x = f (f x)
+
+mapWithFoldr f = foldr (\y acc -> f y: acc) [] 
+
+mapWithFoldl f = foldl (\acc y -> acc ++ [f y]) [] 
+
+--basically foldr gets a function f to folds where folds first argument to fold it to the right
+-- in (1:(2:(3:[]))), replace each : with f and each [] with v
+myFoldr f v (x:xs) = f x (myFoldr f v xs)
+myFoldr f v xs = xs
+
+myFoldl f v [] = v
+myFoldl f v (x:xs) = f (myFoldl f v xs) x
+
+lengthWithFoldr xs = foldr (\_ acc -> acc+1) 0 xs
+
+reverseWithFoldl xs = foldl (flip (:)) [] xs
+
+comp3 f1 f2 f3 = f1 . f2 . f3
+
+type Church a = (a -> a) -> a -> a
+
+zero :: Church a
+zero f = id
+
+one :: Church a
+one f = f
+
+two f = f . f
+
+sh n = n (1+)  0
+
+incr n f = n f . f 
+
+add n m f = n f . m f
+
+multi n m = n . m
+
+expo n m = m n
+
+myall p = foldr ((&&). p) True 
+
+myAny p = null . filter p
+
+myTakeWhile :: Foldable t => (a -> Bool) -> t a -> [a]
+myTakeWhile p = foldl (\ acc x -> if p x then x : acc else acc) []
+
+dec2int :: [Integer] -> Integer
+dec2int = foldl (\ acc x -> acc * 10 + x) 0
+
+compose :: [a->a] -> (a->a)
+compose = foldr (.) id
+
+curry2 :: ((a, b) -> c) -> a -> b -> c 
+curry2 f a b = f (a,b)
+
+test (a,b) = a + b
+t2 = curry2 test
+
+unfold p h t x
+  | p x = []
+  | otherwise = h x : unfold p h t (t x)
+
+myIterate f = unfold (const False) id f
+
+evens :: [Integer] -> [Integer]
+evens = filter even 
+
+squares n = map (^2) [1..n]
+squares' m n = map (^2) [n+1..n+m]
+sumSquares n = sum (squares n)
+
+sumSquares' x = sum . uncurry squares' $ (x, x)
+
+coords :: Integer -> Integer -> [(Integer, Integer)]
+coords n m = [(i,j) | i <- [0..n], j <- [0..m]]

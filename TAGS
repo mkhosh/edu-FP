@@ -1,0 +1,316 @@
+
+./lab1.hs,18
+n n0,1
+f f4,5
+
+./lab2.hs,487
+module Lab2 Lab20,1
+toDigits toDigits10,11
+toDigits toDigits11,12
+eval eval13,14
+testToDigits testToDigits15,16
+toDigitsRev toDigitsRev24,25
+toDigitsRev toDigitsRev25,26
+doubleSecond doubleSecond33,34
+doubleSecond doubleSecond34,35
+sumDigits sumDigits42,43
+sumDigit sumDigit43,44
+sumDigits sumDigits46,47
+isValid isValid53,54
+isValid isValid54,55
+numValid numValid61,62
+numValid numValid62,63
+creditcards creditcards65,66
+creditcards creditcards66,67
+
+./monads.hs,211
+module Monads Monads0,1
+data Tree Tree2,3
+data Tree a = Leaf Leaf2,3
+data Tree a = Leaf a | Node Node2,3
+t1 t14,5
+t2 t25,6
+t3 t36,7
+t4 t47,8
+instance instance9,10
+inc inc17,18
+inc inc18,19
+
+./test.hs,73
+main main0,1
+main main1,2
+fac fac3,4
+fac fac4,5
+twice twice7,8
+
+./week10.hs,788
+main main0,1
+main main1,2
+data Op Op3,4
+data Op = Add Add3,4
+data Op = Add | Sub Sub3,4
+data Op = Add | Sub | Mul Mul3,4
+data Op = Add | Sub | Mul | DivDiv3,4
+instance instance5,6
+--apply --apply11,12
+apply apply12,13
+valid valid17,18
+data Expr Expr22,23
+data Expr = Val Val22,23
+data Expr = Val Int | App App22,23
+v v31,32
+values values33,34
+eval eval36,37
+subs subs41,42
+interleave interleave45,46
+perms perms48,49
+choices choices51,52
+solution solution53,54
+split split55,56
+exprs exprs59,60
+combine combine66,67
+ops ops67,68
+solutions solutions69,70
+type Result Result71,72
+results results73,74
+results results74,75
+combine' combine'81,82
+combine' combine'82,83
+solutions' solutions'84,85
+solutions' solutions'85,86
+
+./week2.hs,114
+f f0,1
+g=g2,3
+h h4,5
+qsort qsort6,7
+add add12,13
+add add13,14
+pairs pairs15,16
+sorted sorted17,18
+
+./week3.hs,332
+main main0,1
+f f2,3
+abs2 abs24,5
+abs3 abs36,7
+(&*)&*9,10
+True True10,11
+_ _11,12
+sum2 sum213,14
+const2 const216,17
+const3 const318,19
+recip2 recip220,21
+halve halve22,23
+halve2 halve224,25
+safetail safetail27,28
+safetail2 safetail229,30
+safetail3 safetail333,34
+safetail4 safetail436,37
+b b40,41
+
+./week4.hs,399
+main main2,3
+factors factors4,5
+perfects perfects6,7
+equiv equiv9,10
+find find11,12
+testFind testFind13,14
+positions positions15,16
+testPositions testPositions17,18
+dot dot19,20
+dot2 dot221,22
+testDot testDot23,24
+let2int let2int25,26
+int2let int2let27,28
+shiftLower shiftLower29,30
+shift shift31,32
+encode encode36,37
+divides divides38,39
+divisors divisors40,41
+
+./week5.hs,296
+main main0,1
+factorial factorial2,3
+factIter factIter5,6
+factorial2 factorial28,9
+myzip myzip10,11
+mydrop mydrop14,15
+[] []18,19
+(x(19,20
+qsort qsort21,22
+(|@)|@26,27
+isElem isElem30,31
+isElem2 isElem233,34
+testMerge testMerge38,39
+merge merge40,41
+msort msort45,46
+
+./week6.hs,957
+module Week6 Week60,1
+twice twice2,3
+mapWithFoldr mapWithFoldr4,5
+mapWithFoldl mapWithFoldl6,7
+myFoldr myFoldr10,11
+myFoldl myFoldl13,14
+lengthWithFoldr lengthWithFoldr16,17
+reverseWithFoldl reverseWithFoldl18,19
+comp3 comp320,21
+type Church Church22,23
+type Church a a22,23
+zero zero24,25
+zero zero25,26
+one one27,28
+one one28,29
+two two30,31
+sh sh32,33
+incr incr34,35
+add add36,37
+multi multi38,39
+expo expo40,41
+myall myall42,43
+myAny myAny44,45
+myTakeWhile myTakeWhile46,47
+myTakeWhile myTakeWhile47,48
+dec2int dec2int49,50
+dec2int dec2int50,51
+compose compose52,53
+compose compose53,54
+curry2 curry255,56
+curry2 curry256,57
+test test58,59
+t2 t259,60
+unfold unfold61,62
+myIterate myIterate65,66
+evens evens67,68
+evens evens68,69
+squares squares70,71
+squares' squares'71,72
+sumSquares sumSquares72,73
+sumSquares' sumSquares'74,75
+coords coords76,77
+coords coords77,78
+
+./week7.hs,315
+module Parsing Parsing0,1
+type Parser Parser2,3
+type Parser a a2,3
+item item4,5
+item item5,6
+failure failure9,10
+failure failure10,11
+return return12,13
+return return13,14
+(+++)+++15,16
+p p16,17
+parse parse20,21
+parse parse21,22
+ex1 ex123,24
+ex2 ex224,25
+ex3 ex325,26
+--p --p27,28
+
+./week8.hs,782
+--main --main3,4
+main main10,11
+act act12,13
+act act13,14
+strlen strlen18,19
+strlen strlen19,20
+hangman hangman25,26
+hangman hangman26,27
+sgetLine sgetLine31,32
+sgetLine sgetLine32,33
+getCh getCh42,43
+getCh getCh43,44
+play play48,49
+play play49,50
+match match57,58
+match match58,59
+next next60,61
+next next61,62
+type Board Board64,65
+initial initial66,67
+initial initial67,68
+finished finished69,70
+finished finished70,71
+valid valid72,73
+valid valid73,74
+move move75,76
+move move76,77
+putRow putRow79,80
+putRow putRow80,81
+putBoard putBoard84,85
+putBoard putBoard85,86
+getDigit getDigit91,92
+getDigit getDigit92,93
+newline newline100,101
+newline newline101,102
+playNim playNim103,104
+playNim playNim104,105
+
+./week9.hs,1080
+module Week9 Week90,1
+type Pos Pos2,3
+origin origin4,5
+origin origin5,6
+left left7,8
+left left8,9
+type Pair Pair10,11
+type Pair a a10,11
+multi multi12,13
+multi multi13,14
+copy copy15,16
+copy copy16,17
+data Answer Answer18,19
+data Answer = Yes Yes18,19
+data Answer = Yes | No No18,19
+data Answer = Yes | No | Unknown Unknown18,19
+filpAns filpAns20,21
+flipAns flipAns21,22
+data Shape Shape24,25
+data Shape = Circle Circle24,25
+data Shape = Circle Float | Rectangle Rectangle24,25
+square square26,27
+area area28,29
+data Nat Nat31,32
+data Nat = Zero Zero31,32
+data Nat = Zero | Succ Succ31,32
+nat2int nat2int33,34
+int2nat int2nat36,37
+zero zero38,39
+one one39,40
+two two40,41
+three three41,42
+four four42,43
+add add44,45
+six six47,48
+data Expr Expr49,50
+data Expr = Val Val49,50
+          | Add Add50,51
+          | Mul Mul51,52
+size size53,54
+eval eval57,58
+data Tree Tree61,62
+data Tree = Leaf Leaf61,62
+          | Node Node62,63
+aTree aTree64,65
+occurs occurs68,69
+flatten flatten73,74
+
+./week9hw.hs,345
+module Week9hw Week9hw0,1
+data Nat Nat6,7
+data Nat = Zero Zero6,7
+data Nat = Zero | Succ Succ6,7
+zero zero8,9
+one one9,10
+two two10,11
+nat2int nat2int12,13
+nat2int nat2int13,14
+int2nat int2nat15,16
+add add18,19
+mult mult21,22
+data Tree Tree24,25
+data Tree = Leaf Leaf24,25
+data Tree = Leaf Integer | Node Node24,25

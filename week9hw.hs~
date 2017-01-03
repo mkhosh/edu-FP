@@ -1,0 +1,5 @@
+module Week9hw where
+
+import Data.List
+import Data.Char
+import Hugs.IOExts (unsafeCoerce)

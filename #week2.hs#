@@ -1,0 +1,10 @@
+f x y z = (x + y) == z
+
+g= f 12 13
+
+h(x,y) = x +y
+
+qsort [] = [] qsort (x:xs) = qsort smaller ++ [x] ++ qsort larger
+where smaller = [a | a <- xs, a <= x] larger = [b | b <- xs, b > x]
+
+add :: (Int,Int) -> Int add (x,y) = x+y

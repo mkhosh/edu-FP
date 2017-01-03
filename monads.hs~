@@ -1,0 +1,3 @@
+module Monads where
+
+data Tree a = Leaf a | Node Trea a a Tree a
