@@ -1,6 +1,13 @@
 module Parsing where
+import Data.Char
+import Control.Monad
 
+infixr 5 +++
+
+-- | The monad of parsers
+-- | ---------------------
 type Parser a = String -> [(a,String)]
+
 
 item :: Parser Char
 item = \inp -> case inp of
@@ -10,26 +17,27 @@ item = \inp -> case inp of
 failure :: Parser a
 failure = \inp -> []
 
-return :: a -> Parser a
-return v = \inp -> [(v,inp)]
+preturn :: a -> Parser a
+preturn v = \inp -> [(v,inp)]
+
 
 (+++) :: Parser a -> Parser a -> Parser a
 p +++ q = \inp -> case p inp of
                     [] -> parse q inp
-                    [(v,inp)] -> [(v,inp)]
+                    r -> r
 
 parse :: Parser a -> String -> [(a,String)]
 parse p inp = p inp
 
-ex1 = parse (Parsing.return 1) "abc"
-ex2 = parse (item +++ Parsing.return 'd') "abc"
-ex3 = parse (failure +++ Parsing.return 'd') "abc"
+ex1 = parse (preturn 1) "abc"
+ex2 = parse (item +++ preturn 'd') "abc"
+ex3 = parse (failure +++ preturn 'd') "abc"
 
 --p :: Parser (Char,Char)
 p = do x <- item
        item
        y <-  item
-       Parsing.return (x,y)
+       preturn (x,y)
 
 -- sat :: (Char -> Bool) -> Parser Char
 -- sat p = do x <- item
