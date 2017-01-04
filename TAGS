@@ -64,7 +64,7 @@ mlabel mlabel94,95
 mlabel mlabel95,96
 conv conv103,104
 
-./parsing.hs,304
+./parsing.hs,770
 module Parsing Parsing0,1
 newtype Parser Parser5,6
 newtype Parser a = P P5,6
@@ -81,6 +81,31 @@ ex5 ex540,41
 ex6 ex641,42
 three three49,50
 three three50,51
+ex7 ex764,65
+ex8 ex865,66
+ex9 ex966,67
+sat sat68,69
+sat sat69,70
+digit digit72,73
+digit digit73,74
+lower lower75,76
+lower lower76,77
+upper upper78,79
+upper upper79,80
+letter letter81,82
+letter letter82,83
+alphanum alphanum84,85
+alphanum alphanum85,86
+char char87,88
+char char88,89
+ex10 ex1090,91
+string string92,93
+string string93,94
+ex11 ex1198,99
+ex12 ex1299,100
+ex13 ex13100,101
+ex14 ex14101,102
+ex15 ex15102,103
 
 ./parsing.lhs,1180
  module Parsing Parsing0,1
