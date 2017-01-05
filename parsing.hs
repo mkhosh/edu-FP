@@ -32,7 +32,13 @@ instance Applicative Parser where
                            [(g,out)] -> parse (fmap g px) out)
 
 ex3 = parse (pure 1) "abc"
-ex4 = parse (pure digitToInt <*> item) "abc"
+ex40 = parse (pure digitToInt <*> item) "abc"
+ex4 = parse (aFparser <*> item) "abc"
+
+aFparser :: Parser (Char -> Int)
+aFparser = P (\inp -> case inp of
+                        [] -> []
+                        x:xs -> [(\y -> digitToInt x + digitToInt y,xs)])
 
 -- three :: Parser (Char,Char)
 -- three = pure g <*> item <*> item <*> item
@@ -101,3 +107,111 @@ ex12 = parse (string "abc") "ab1234"
 ex13 = parse (many digit) "123abc"
 ex14 = parse (many digit) "abc"
 ex15 = parse (some digit) "abc"
+
+ident :: Parser String
+ident = do x <- lower
+           xs <- many alphanum
+           return (x:xs)
+
+nat :: Parser Int
+nat = do xs <- some digit
+         return (read xs)
+
+space :: Parser ()
+space = do many (sat isSpace)
+           return ()
+
+ex16 = parse ident "abc def"
+--[("abc"," def")]
+
+ex17 =  parse nat "123 abc"
+--[(123," abc")]
+
+ex18 = parse space " abc"
+-- [((),"abc")]
+
+int :: Parser Int
+int = (do char '-'
+          space
+          n <- nat
+          return (-n))
+      <|> nat
+
+ex19 = parse int "-123 abc"
+--[(-123," abc")]
+ex20 = parse int "123 abc"
+--[(123," abc")]
+
+token :: Parser a -> Parser a
+token p = do space
+             v <- p
+             space
+             return v
+
+identifier :: Parser String
+identifier = token ident
+
+natural :: Parser Int
+natural = token nat
+
+integer :: Parser Int
+integer = token int
+
+symbol :: String -> Parser String
+symbol xs = token (string xs)
+
+nats :: Parser [Int]
+nats = do symbol "["
+          n <- natural
+          ns <- many (do symbol ","
+                         natural)
+          symbol "]"
+          return (n:ns)
+
+ex21 = parse nats " [1, 2, 3] "
+--[([1,2,3],"")]
+
+ex22 = parse nats "[1,2,]"
+--[]
+
+ex23 = parse nats "[1  ]"
+--[]
+
+expr :: Parser Int
+expr = do t <- term
+          (do symbol "+"
+              e <- expr
+              return (t + e))
+            <|> return t
+
+term :: Parser Int
+term = do f <- factor
+          (do symbol "*"
+              t <- term
+              return (f * t))
+            <|> return f
+
+factor :: Parser Int
+factor = (do symbol "("
+             e <- expr
+             symbol ")"
+             return e)
+         <|> natural
+
+eval :: String -> Int
+eval xs = case (parse expr xs) of
+            [(n,[])]  -> n
+            [(_,out)] -> error ("Unused input " ++ out)
+            []        -> error "Invalid input"
+
+ex24 = eval " 2 +3*4"
+--14
+
+ex25 = eval "2*(3+4)"
+--14
+
+ex26 = eval "2*3^4"
+-- *** Exception: Unused input ^4
+
+ex27 = eval "one plus two"
+-- *** Exception: Invalid input”
