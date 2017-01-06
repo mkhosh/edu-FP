@@ -122,3 +122,11 @@ playNim board player =
             do newline
                putStrLn "ERROR: Invalid move"
                playNim board player
+
+putStr' :: String -> IO ()
+putStr' [] = return ()
+putStr' (x:xs) = do putChar x
+                    putChar '\n'
+                    putStr' xs
+  --putChar x >> putStr' xs
+

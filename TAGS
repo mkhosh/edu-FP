@@ -44,6 +44,26 @@ numValid numValid62,63
 creditcards creditcards65,66
 creditcards creditcards66,67
 
+./lab4.hs,349
+module Lab4 Lab40,1
+triangle triangle12,13
+triangle triangle13,14
+count count20,21
+count count21,22
+xs xs24,25
+ys ys25,26
+poem poem27,28
+euclid euclid41,42
+euclid euclid42,43
+funkyMap funkyMap50,51
+funkyMap funkyMap51,52
+firstMap firstMap52,53
+secondMap secondMap54,55
+dup dup57,58
+h h59,60
+fix fix61,62
+f f63,64
+
 ./monads.hs,801
 module Monads Monads0,1
 data Tree Tree3,4
@@ -270,6 +290,11 @@ combine' combine'82,83
 solutions' solutions'84,85
 solutions' solutions'85,86
 
+./week11.hs,49
+loop loop0,1
+ones ones2,3
+primes primes4,5
+
 ./week2.hs,114
 f f0,1
 g=g2,3
@@ -406,7 +431,7 @@ ex2 ex232,33
 ex3 ex333,34
 --p --p35,36
 
-./week8.hs,782
+./week8.hs,832
 --main --main3,4
 main main10,11
 act act12,13
@@ -444,6 +469,8 @@ newline newline100,101
 newline newline101,102
 playNim playNim103,104
 playNim playNim104,105
+putStr' putStr'125,126
+putStr' putStr'126,127
 
 ./week9.hs,1080
 module Week9 Week90,1
